@@ -20,13 +20,14 @@
   "Search for TERM in OSX Dictionary.app.
 
 If TERM is nil, try in order terms in the region, then
-`word-at-point'."
+`word-at-point' finally read from minibuffer."
   (interactive)
   (let ((term
 	 (cond
 	  (term term)
 	  ((region-active-p) (buffer-substring-no-properties (mark) (point)))
-	  ((word-at-point) (substring-no-properties (word-at-point))))))
+	  ((word-at-point) (substring-no-properties (word-at-point)))
+	  (t (read-from-minibuffer "Look up for: ")))))
     (when term
       (shell-command (format "open 'dict://%s'" (url-hexify-string term))))))
 
