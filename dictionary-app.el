@@ -5,7 +5,7 @@
 ;; Author: Sébastien Gross <seb•ɑƬ•chezwam•ɖɵʈ•org>
 ;; Keywords: emacs, 
 ;; Created: 2012-08-14
-;; Last changed: 2012-08-14 20:45:54
+;; Last changed: 2012-09-11 16:56:33
 ;; Licence: WTFPL, grab your copy here: http://sam.zoy.org/wtfpl/
 
 ;; This file is NOT part of GNU Emacs.
@@ -20,6 +20,7 @@
   (require 'thingatpt)
   (require 'url-util))
 
+;;;###autoload
 (defun dictionary-app-search (&optional term)
   "Search for TERM in OSX Dictionary.app.
 
